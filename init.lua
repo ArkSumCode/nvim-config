@@ -23,6 +23,7 @@ require("lazy").setup({
 		{ import = "lazyvim.plugins.extras.lang.toml" },
 		{ import = "lazyvim.plugins.extras.lang.docker" },
 		{ import = "lazyvim.plugins.extras.lang.git" },
+		{ "nvim-tree/nvim-web-devicons", opts = {} },
 	},
 	defaults = {
 		lazy = false,
@@ -77,6 +78,9 @@ require("nvim-treesitter.configs").setup({
 	auto_install = true,
 	ignore_install = {},
 })
+
+-- Add Icons
+require("nvim-web-devicons").setup({})
 
 -- Godot Setup make sure to have nmap/ncat installed
 local gdscript_config = {
