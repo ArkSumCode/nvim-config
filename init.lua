@@ -10,6 +10,19 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	spec = {
 		{ "LazyVim/LazyVim", import = "lazyvim.plugins" },
+		{ import = "lazyvim.plugins.extras.lang.typescript" },
+		{ import = "lazyvim.plugins.extras.lang.json" },
+		{ import = "lazyvim.plugins.extras.lang.markdown" },
+		{ import = "lazyvim.plugins.extras.lang.rust" },
+		{ import = "lazyvim.plugins.extras.lang.python" },
+		{ import = "lazyvim.plugins.extras.lang.java" },
+		{ import = "lazyvim.plugins.extras.lang.angular" },
+		{ import = "lazyvim.plugins.extras.formatting.prettier" },
+		{ import = "lazyvim.plugins.extras.linting.eslint" },
+		{ import = "lazyvim.plugins.extras.lang.yaml" },
+		{ import = "lazyvim.plugins.extras.lang.toml" },
+		{ import = "lazyvim.plugins.extras.lang.docker" },
+		{ import = "lazyvim.plugins.extras.lang.git" },
 	},
 	defaults = {
 		lazy = false,
@@ -65,7 +78,7 @@ require("nvim-treesitter.configs").setup({
 	ignore_install = {},
 })
 
--- Godot Setup
+-- Godot Setup make sure to have nmap installed
 local gdscript_config = {
 	capabilities = capabilities,
 	on_attach = on_attach,
