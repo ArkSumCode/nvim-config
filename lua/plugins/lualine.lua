@@ -26,13 +26,12 @@ return {
 				disabled_filetypes = { statusline = { "dashboard", "alpha", "ministarter", "snacks_dashboard" } },
 			},
 			sections = {
-				lualine_a = { "mode" },
+				lualine_a = {},
 				lualine_b = {
 					LazyVim.lualine.root_dir(),
 					{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
 					{ LazyVim.lualine.pretty_path() },
 				},
-
 				lualine_c = {},
 				lualine_x = {
 					Snacks.profiler.status(),
