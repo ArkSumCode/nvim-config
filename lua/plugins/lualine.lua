@@ -33,18 +33,7 @@ return {
 					{ LazyVim.lualine.pretty_path() },
 				},
 
-				lualine_c = {
-					"branch",
-					{
-						"diagnostics",
-						symbols = {
-							error = icons.diagnostics.Error,
-							warn = icons.diagnostics.Warn,
-							info = icons.diagnostics.Info,
-							hint = icons.diagnostics.Hint,
-						},
-					},
-				},
+				lualine_c = {},
 				lualine_x = {
 					Snacks.profiler.status(),
           -- stylua: ignore
@@ -90,12 +79,18 @@ return {
 						end,
 					},
 				},
-				lualine_y = {},
-				lualine_z = {
-					function()
-						return " " .. os.date("%R")
-					end,
+				lualine_y = {
+					{
+						"diagnostics",
+						symbols = {
+							error = icons.diagnostics.Error,
+							warn = icons.diagnostics.Warn,
+							info = icons.diagnostics.Info,
+							hint = icons.diagnostics.Hint,
+						},
+					},
 				},
+				lualine_z = { "branch" },
 			},
 			extensions = { "neo-tree", "lazy", "fzf" },
 		}
