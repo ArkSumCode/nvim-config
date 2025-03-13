@@ -12,16 +12,19 @@ config.font_size = 14
 config.font =
 	wezterm.font("RecMonoLinear Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
-config.default_prog = { "powershell.exe" }
-config.default_cwd = "C:\\Users\\marku\\repos"
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	config.default_prog = { "powershell.exe" }
+	config.default_cwd = "C:\\Users\\marku\\repos"
+end
+
+config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
-	{ key = "e", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-	{ key = "r", mods = "CTRL|SHIFT", action = wezterm.action({ CloseCurrentPane = { confirm = true } }) },
-	{ key = "v", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
-	{ key = "c", mods = "CTRL|SHIFT", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
-	{ key = "d", mods = "CTRL|SHIFT", action = wezterm.action.ShowLauncher },
-	{ key = "f", mods = "CTRL|SHIFT", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
+	{ key = "%", mods = "LEADER|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "p", mods = "LEADER", action = act.PasteFrom("Clipboard") },
+	{ key = "y", mods = "LEADER", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
+	{ key = "d", mods = "LEADER", action = wezterm.action.ShowLauncher },
+	{ key = "f", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
 }
 
 wezterm.on("gui-startup", function(cmd)
