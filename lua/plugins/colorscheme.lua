@@ -1,7 +1,19 @@
 -- Set colorscheme to tokyonight night
-return { {
-	"LazyVim/LazyVim",
-	opts = {
-		colorscheme = "tokyonight-night",
+return {
+	{
+		"folke/tokyonight.nvim",
+		opts = {
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
+		},
 	},
-} }
+	{
+		"LazyVim/LazyVim",
+		opts = {
+			colorscheme = "tokyonight-night",
+		},
+	},
+}
