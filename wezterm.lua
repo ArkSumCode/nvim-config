@@ -46,7 +46,20 @@ config.keys = {
 		mods = "LEADER",
 		action = act.ActivatePaneDirection("Down"),
 	},
+	{
+		key = "z",
+		mods = "LEADER",
+		action = wezterm.action.TogglePaneZoomState,
+	},
 }
+
+for i = 1, 8 do
+	-- F1 through F8 to activate that tab
+	table.insert(config.keys, {
+		key = "F" .. tostring(i),
+		action = act.ActivateTab(i - 1),
+	})
+end
 
 wezterm.on("gui-startup", function(cmd)
 	local screen = wezterm.gui.screens().active
