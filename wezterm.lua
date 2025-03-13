@@ -9,6 +9,7 @@ config.default_cwd = "C:\\Users\\marku"
 
 config.disable_default_key_bindings = true
 config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = false
 
 config.keys = {
 	{ key = "e", mods = "CTRL|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
