@@ -20,5 +20,6 @@ config.keys = {
 }
 
 config.font_size = 14
-
+config.font =
+	wezterm.font("RecMonoLinear Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Normal" })
 return config
