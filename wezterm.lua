@@ -26,6 +26,26 @@ config.keys = {
 	{ key = "d", mods = "LEADER", action = wezterm.action.ShowLauncher },
 	{ key = "f", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
 	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
+	{
+		key = "RightArrow",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Right"),
+	},
+	{
+		key = "LeftArrow",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Left"),
+	},
+	{
+		key = "UpArrow",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Up"),
+	},
+	{
+		key = "DownArrow",
+		mods = "LEADER",
+		action = act.ActivatePaneDirection("Down"),
+	},
 }
 
 wezterm.on("gui-startup", function(cmd)
