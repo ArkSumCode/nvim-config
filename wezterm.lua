@@ -13,7 +13,7 @@ config.font =
 	wezterm.font("RecMonoLinear Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
 if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	config.default_prog = { "powershell.exe" }
+	config.default_prog = { "powershell.exe", "-NoLogo" }
 	config.default_cwd = "C:\\Users\\marku\\repos"
 end
 
@@ -25,6 +25,7 @@ config.keys = {
 	{ key = "y", mods = "LEADER", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "d", mods = "LEADER", action = wezterm.action.ShowLauncher },
 	{ key = "f", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
+	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
 }
 
 wezterm.on("gui-startup", function(cmd)
