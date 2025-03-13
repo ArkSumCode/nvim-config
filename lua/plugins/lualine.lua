@@ -1,5 +1,8 @@
 return {
 	"nvim-lualine/lualine.nvim",
+	dependencies = {
+		"bwpge/lualine-pretty-path",
+	},
 	event = "VeryLazy",
 	init = function()
 		vim.g.lualine_laststatus = vim.o.laststatus
@@ -28,9 +31,9 @@ return {
 			sections = {
 				lualine_a = {},
 				lualine_b = {
-					LazyVim.lualine.root_dir(),
-					{ "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-					{ LazyVim.lualine.pretty_path() },
+					{ "pretty_path", directories = {
+						shorten = false,
+					} },
 				},
 				lualine_c = {},
 				lualine_x = {
