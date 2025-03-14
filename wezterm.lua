@@ -23,34 +23,14 @@ config.keys = {
 	{ key = "%", mods = "LEADER|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
 	{ key = "p", mods = "LEADER", action = act.PasteFrom("Clipboard") },
 	{ key = "y", mods = "LEADER", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
-	{ key = "d", mods = "LEADER", action = wezterm.action.ShowLauncher },
-	{ key = "f", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
-	{ key = "f", mods = "LEADER|SHIFT", action = wezterm.action.ToggleFullScreen },
-	{
-		key = "RightArrow",
-		mods = "LEADER",
-		action = act.ActivatePaneDirection("Right"),
-	},
-	{
-		key = "LeftArrow",
-		mods = "LEADER",
-		action = act.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "UpArrow",
-		mods = "LEADER",
-		action = act.ActivatePaneDirection("Up"),
-	},
-	{
-		key = "DownArrow",
-		mods = "LEADER",
-		action = act.ActivatePaneDirection("Down"),
-	},
-	{
-		key = "z",
-		mods = "LEADER",
-		action = wezterm.action.TogglePaneZoomState,
-	},
+	{ key = "g", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
+	{ key = "f", mods = "LEADER", action = wezterm.action.ToggleFullScreen },
+	{ key = "RightArrow", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "LeftArrow", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "UpArrow", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "DownArrow", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+	{ key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
+	{ key = "d", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 }
 
 for i = 1, 8 do
