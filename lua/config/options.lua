@@ -8,3 +8,6 @@ opt.shiftwidth = 4
 
 -- Show absulute line numbers
 opt.relativenumber = false
+
+-- Make yank global
+opt.clipboard = "unnamedplus"
