@@ -21,3 +21,7 @@ Create a symlink to wezterm.lua
 ## Starship
 
 Install [starship](https://starship.rs/guide/) on your system
+
+## xClip
+
+To make yanking global on linux install xclip
