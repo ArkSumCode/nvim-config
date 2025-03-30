@@ -17,6 +17,19 @@ if wezterm.target_triple == "x86_64-pc-windows-msvc" then
 	config.default_cwd = "C:\\Users\\marku\\repos"
 end
 
+-- config.background = {
+-- 	{
+-- 		source = {
+-- 			File = "C:\\Users\\marku\\terminal-background.png",
+-- 		},
+-- 		height = "100%",
+-- 		opacity = 0.8,
+-- 		hsb = {
+-- 			brightness = 0.1,
+-- 		},
+-- 	},
+-- }
+
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
