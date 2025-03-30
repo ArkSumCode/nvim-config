@@ -3,8 +3,7 @@ return {
 	event = "VeryLazy",
 	version = false, -- Never set this value to "*"! Never!
 	opts = {
-		-- add any opts here
-		-- for example
+		hints = { enabled = false },
 		provider = "openai",
 		openai = {
 			endpoint = "https://api.openai.com/v1",
@@ -13,6 +12,10 @@ return {
 			temperature = 0,
 			max_tokens = 8192, -- Increase this to include reasoning tokens (for reasoning models)
 			--reasoning_effort = "medium", -- low|medium|high, only used for reasoning models
+		},
+		windows = {
+			position = "left",
+			width = 40,
 		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
