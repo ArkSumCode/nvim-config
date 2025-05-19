@@ -7,7 +7,7 @@ config.color_scheme = "tokyonight_night"
 config.disable_default_key_bindings = true
 config.hide_tab_bar_if_only_one_tab = true
 config.enable_tab_bar = false
-config.window_decorations = "RESIZE"
+config.window_decorations = "NONE"
 config.window_background_opacity = 0.95
 config.font_size = 14
 config.font =
@@ -34,15 +34,16 @@ end
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
-	{ key = "%", mods = "LEADER|SHIFT", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "i", mods = "LEADER", action = wezterm.action.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "u", mods = "LEADER", action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }) },
 	{ key = "p", mods = "LEADER", action = act.PasteFrom("Clipboard") },
 	{ key = "y", mods = "LEADER", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "g", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
 	{ key = "f", mods = "LEADER", action = wezterm.action.ToggleFullScreen },
-	{ key = "RightArrow", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-	{ key = "LeftArrow", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-	{ key = "UpArrow", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-	{ key = "DownArrow", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 	{ key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
 	{ key = "d", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 }
@@ -57,7 +58,7 @@ end
 
 wezterm.on("gui-startup", function(cmd)
 	local screen = wezterm.gui.screens().active
-	local ratio = 0.7
+	local ratio = 0.9
 	local width, height = screen.width * ratio, screen.height * ratio
 	local tab, pane, window = wezterm.mux.spawn_window({
 		position = {
