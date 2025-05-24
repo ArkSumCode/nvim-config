@@ -5,8 +5,8 @@ local act = wezterm.action
 config.default_cwd = "/home/markus/repos/"
 
 -- color schemes
-config.color_scheme = "Equilibrium Light (base16)" -- light color scheme
--- config.color_scheme = "Circus (base16)" -- dark color scheme
+-- config.color_scheme = "Equilibrium Light (base16)" -- light color scheme
+config.color_scheme = "Circus (base16)" -- dark color scheme
 
 -- config.window_background_opacity = 0.95
 config.font_size = 14

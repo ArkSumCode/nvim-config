@@ -3,8 +3,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "base16-circus", --light color scheme
-			colorscheme = "base16-equilibrium-light", -- dark color scheme
+			colorscheme = "base16-circus", --light color scheme
+			-- colorscheme = "base16-equilibrium-light", -- dark color scheme
 		},
 	},
 	{
