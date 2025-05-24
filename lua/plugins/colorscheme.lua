@@ -3,9 +3,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			-- colorscheme = "tokyonight-night",
-			-- colorscheme = "dayfox",
-			colorscheme = "kanagawa",
+			-- colorscheme = "base16-circus", --light color scheme
+			colorscheme = "base16-equilibrium-light", -- dark color scheme
 		},
 	},
 	{
@@ -22,13 +21,6 @@ return {
 		"EdenEast/nightfox.nvim",
 	},
 	{
-		"rebelot/kanagawa.nvim",
-		opts = {
-			transparent = true,
-			styles = {
-				sidebars = "transparent",
-				floats = "transparent",
-			},
-		},
+		"RRethy/base16-nvim",
 	},
 }
