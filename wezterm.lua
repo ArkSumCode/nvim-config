@@ -6,7 +6,8 @@ config.default_cwd = "/home/markus/repos/"
 
 -- color schemes
 -- config.color_scheme = "tokyonight_night"
-config.color_scheme = "dayfox"
+-- config.color_scheme = "dayfox"
+config.color_scheme = "Atelier Cave (base16)"
 
 -- config.window_background_opacity = 0.95
 config.font_size = 14
