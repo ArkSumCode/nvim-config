@@ -2,21 +2,18 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 
-config.term = "xterm-256color"
-config.color_scheme = "tokyonight_night"
-config.disable_default_key_bindings = true
-config.hide_tab_bar_if_only_one_tab = true
-config.enable_tab_bar = false
-config.window_decorations = "NONE"
-config.window_background_opacity = 0.95
+config.default_cwd = "/home/markus/repos/"
+
+-- color schemes
+-- config.color_scheme = "tokyonight_night"
+config.color_scheme = "dayfox"
+
+-- config.window_background_opacity = 0.95
 config.font_size = 14
 config.font =
 	wezterm.font("RecMonoLinear Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
-if wezterm.target_triple == "x86_64-pc-windows-msvc" then
-	config.default_prog = { "powershell.exe", "-NoLogo" }
-	config.default_cwd = "C:\\Users\\marku\\repos"
-end
+config.term = "xterm-256color"
 
 -- config.background = {
 -- 	{
@@ -48,6 +45,11 @@ config.keys = {
 	{ key = "d", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 }
 
+-- hide tab
+config.disable_default_key_bindings = true
+config.hide_tab_bar_if_only_one_tab = true
+config.enable_tab_bar = false
+
 for i = 1, 8 do
 	-- F1 through F8 to activate that tab
 	table.insert(config.keys, {
@@ -58,7 +60,7 @@ end
 
 wezterm.on("gui-startup", function(cmd)
 	local screen = wezterm.gui.screens().active
-	local ratio = 0.9
+	local ratio = 1.0
 	local width, height = screen.width * ratio, screen.height * ratio
 	local tab, pane, window = wezterm.mux.spawn_window({
 		position = {

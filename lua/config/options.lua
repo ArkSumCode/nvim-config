@@ -11,3 +11,6 @@ opt.relativenumber = false
 
 -- Make yank global
 opt.clipboard = "unnamedplus"
+
+-- Better colors
+vim.opt.termguicolors = true

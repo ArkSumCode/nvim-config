@@ -1,6 +1,13 @@
 -- Set colorscheme to tokyonight night
 return {
 	{
+		"LazyVim/LazyVim",
+		opts = {
+			-- colorscheme = "tokyonight-night",
+			colorscheme = "dayfox",
+		},
+	},
+	{
 		"folke/tokyonight.nvim",
 		opts = {
 			transparent = true,
@@ -11,9 +18,13 @@ return {
 		},
 	},
 	{
-		"LazyVim/LazyVim",
+		"EdenEast/nightfox.nvim",
 		opts = {
-			colorscheme = "tokyonight-night",
+			transparent = true,
+			styles = {
+				sidebars = "transparent",
+				floats = "transparent",
+			},
 		},
 	},
 }
