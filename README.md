@@ -22,6 +22,10 @@ Create a symlink to wezterm.lua
 
 Install [starship](https://starship.rs/guide/) on your system
 
+## Zoxide
+
+Install [zoxide](https://github.com/ajeetdsouza/zoxide) on your system
+
 ## xClip
 
 To make yanking global on linux install xclip

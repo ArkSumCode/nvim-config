@@ -9,8 +9,5 @@ opt.shiftwidth = 4
 -- Show absulute line numbers
 opt.relativenumber = false
 
--- Make yank global
-opt.clipboard = "unnamedplus"
-
 -- Better colors
 vim.opt.termguicolors = true
