@@ -38,12 +38,20 @@ config.keys = {
 	{ key = "y", mods = "LEADER", action = wezterm.action.CopyTo("ClipboardAndPrimarySelection") },
 	{ key = "g", mods = "LEADER", action = wezterm.action({ Search = { CaseInSensitiveString = "" } }) },
 	{ key = "f", mods = "LEADER", action = wezterm.action.ToggleFullScreen },
-	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
-	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
-	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
-	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 	{ key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
 	{ key = "d", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+	{
+		key = "l",
+		mods = "LEADER",
+		action = act.Multiple({
+				act.ClearScrollback("ScrollbackAndViewport"),
+				act.SendKey({ key ="l", mods = "CTRL"}),
+		}),
+	},
+	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
+	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
+	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
 }
 
 -- hide tab
