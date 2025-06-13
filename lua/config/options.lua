@@ -11,3 +11,6 @@ opt.relativenumber = false
 
 -- Better colors
 vim.opt.termguicolors = true
+
+-- Aways current working dir instead of project dir
+vim.g.root_spec = { "cwd" }
