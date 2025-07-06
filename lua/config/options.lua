@@ -14,3 +14,6 @@ vim.opt.termguicolors = true
 
 -- Aways current working dir instead of project dir
 vim.g.root_spec = { "cwd" }
+
+-- Rust diagnostics
+vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
