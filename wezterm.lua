@@ -44,8 +44,8 @@ config.keys = {
 		key = "l",
 		mods = "LEADER",
 		action = act.Multiple({
-				act.ClearScrollback("ScrollbackAndViewport"),
-				act.SendKey({ key ="l", mods = "CTRL"}),
+			act.ClearScrollback("ScrollbackAndViewport"),
+			act.SendKey({ key = "l", mods = "CTRL" }),
 		}),
 	},
 	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
@@ -69,7 +69,7 @@ end
 
 wezterm.on("gui-startup", function(cmd)
 	local screen = wezterm.gui.screens().active
-	local ratio = 1.0
+	local ratio = 0.9
 	local width, height = screen.width * ratio, screen.height * ratio
 	local tab, pane, window = wezterm.mux.spawn_window({
 		position = {
@@ -81,5 +81,11 @@ wezterm.on("gui-startup", function(cmd)
 	-- window:gui_window():maximize()
 	window:gui_window():set_inner_size(width, height)
 end)
+
+-- windows specific
+if wezterm.target_triple == "x86_64-pc-windows-msvc" then
+	-- set terminal from cmd to powershell
+	config.default_prog = { "pwsh.exe" }
+end
 
 return config
