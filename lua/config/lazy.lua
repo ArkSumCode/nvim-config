@@ -22,7 +22,9 @@ require("lazy").setup({
 		-- Specified Extras are permanent Installs
 		{ import = "lazyvim.plugins.extras.ui.dashboard-nvim" },
 		-- Plugins in lua/plugins folder
-		{ import = "plugins" },
+		{ import = "plugins/general" },
+		{ import = "plugins/rust" },
+		{ import = "plugins/typescript" },
 	},
 	defaults = {
 		lazy = false,
