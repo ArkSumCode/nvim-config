@@ -1,4 +1,5 @@
 local opt = vim.opt
+local glob = vim.g
 
 -- Set Tab as intend width equals 4 Space
 opt.autoindent = true
@@ -10,13 +11,13 @@ opt.shiftwidth = 4
 opt.relativenumber = false
 
 -- Better colors
-vim.opt.termguicolors = true
+opt.termguicolors = true
 
 -- Aways current working dir instead of project dir
-vim.g.root_spec = { "cwd" }
+glob.root_spec = { "cwd" }
 
 -- Rust diagnostics
-vim.g.lazyvim_rust_diagnostics = "rust-analyzer"
+glob.lazyvim_rust_diagnostics = "rust-analyzer"
 
 -- Windows undotree fix, might disable on linux for undo tree
-vim.g.undotree_DiffCommand = "FC"
+glob.undotree_DiffCommand = "FC"
