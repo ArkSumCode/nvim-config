@@ -18,6 +18,7 @@ return {
 					typescript = { "prettierd", "prettier" },
 					javascript = { "prettierd", "prettier" },
 					json = { "prettierd", "prettier" },
+					angular = { "prettierd", "prettier" },
 				},
 				formatters = {
 					injected = { options = { ignore_errors = true } },
