@@ -4,6 +4,7 @@ return {
 	opts = {
 		ensure_installed = {
 			"angular",
+			"bash",
 			"css",
 			"csv",
 			"dockerfile",
