@@ -1,4 +1,3 @@
--- Set colorscheme to tokyonight night
 return {
 	{
 		"LazyVim/LazyVim",
