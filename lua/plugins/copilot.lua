@@ -27,13 +27,13 @@ local function scan_files_by_ext(dir, ext, files)
 		if not name then
 			break
 		end
+
 		local full_path = dir .. os_separator() .. name
 		if type == "directory" then
 			scan_files_by_ext(full_path, ext, files)
 		elseif type == "file" then
 			if name:sub(-#ext) == ext then
 				table.insert(files, full_path)
-				break
 			end
 		end
 	end
@@ -56,6 +56,7 @@ end
 local function project_files(scheme, mimetype, ext)
 	local path = working_dir()
 	local files = scan_files_by_ext(path, ext)
+	print("hello" .. #files)
 	return make_objects(scheme, mimetype, files)
 end
 
