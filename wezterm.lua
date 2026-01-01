@@ -7,28 +7,19 @@ config.default_cwd = "/home/markus/repos/"
 -- color schemes
 -- config.color_scheme = "tokyonight_night"
 -- config.color_scheme = "Equilibrium Light (base16)" -- light color scheme
-config.color_scheme = "Circus (base16)" -- dark color scheme
+-- config.color_scheme = "Circus (base16)Circus (base16)" -- dark color scheme
+config.color_scheme = "Catppuccin Mocha" -- dark color scheme
 
--- config.window_background_opacity = 0.95
 config.font_size = 14
 config.font =
 	wezterm.font("RecMonoLinear Nerd Font Propo", { weight = "Regular", stretch = "Normal", style = "Normal" })
 
 config.term = "xterm-256color"
-
--- config.background = {
--- 	{
--- 		source = {
--- 			File = "C:\\Users\\marku\\terminal-background.png",
--- 		},
--- 		height = "100%",
--- 		opacity = 0.8,
--- 		hsb = {
--- 			brightness = 0.1,
--- 		},
--- 	},
--- }
-
+config.window_background_gradient = {
+	colors = { "#191919", "#191919" },
+	orientation = "Vertical",
+}
+config.window_background_opacity = 0.9
 config.leader = { key = "b", mods = "CTRL", timeout_milliseconds = 1000 }
 
 config.keys = {
@@ -48,10 +39,10 @@ config.keys = {
 			act.SendKey({ key = "l", mods = "CTRL" }),
 		}),
 	},
-	{ key = "l", mods = "CTRL", action = act.ActivatePaneDirection("Right") },
-	{ key = "h", mods = "CTRL", action = act.ActivatePaneDirection("Left") },
-	{ key = "k", mods = "CTRL", action = act.ActivatePaneDirection("Up") },
-	{ key = "j", mods = "CTRL", action = act.ActivatePaneDirection("Down") },
+	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
 }
 
 -- hide tab

@@ -2,7 +2,8 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "base16-circus", --light color scheme
+			colorscheme = "catppuccin",
+			-- colorscheme = "base16-circus", --light color scheme
 			-- colorscheme = "base16-equilibrium-light", -- dark color scheme
 			-- colorscheme = "tokyonight-night",
 		},
@@ -22,5 +23,12 @@ return {
 	},
 	{
 		"RRethy/base16-nvim",
+	},
+	{
+		"catppuccin/nvim",
+		opts = {
+			flavour = "mocha", -- dark theme
+			transparent_background = true,
+		},
 	},
 }
