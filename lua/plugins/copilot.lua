@@ -16,7 +16,7 @@ local function read_file(filepath)
 	return content
 end
 
-local function lua_files(dir, files)
+local function scan_files_by_ext(dir, ext, files)
 	files = files or {}
 	local scan = vim.loop.fs_scandir(dir)
 	if not scan then
@@ -29,25 +29,34 @@ local function lua_files(dir, files)
 		end
 		local full_path = dir .. os_separator() .. name
 		if type == "directory" then
-			lua_files(full_path, files)
-		elseif type == "file" and name:sub(-4) == ".lua" then
-			table.insert(files, full_path)
+			scan_files_by_ext(full_path, ext, files)
+		elseif type == "file" then
+			if name:sub(-#ext) == ext then
+				table.insert(files, full_path)
+				break
+			end
 		end
 	end
 	return files
 end
 
-local function lua_objects(files)
+local function make_objects(scheme, mimetype, files)
 	local objects = {}
 	for _, file in ipairs(files) do
 		local content = read_file(file)
 		table.insert(objects, {
-			uri = "lua://" .. file,
-			mimetype = "text/x-lua",
+			uri = scheme .. "://" .. file,
+			mimetype = mimetype,
 			data = content,
 		})
 	end
 	return objects
+end
+
+local function project_files(scheme, mimetype, ext)
+	local path = working_dir()
+	local files = scan_files_by_ext(path, ext)
+	return make_objects(scheme, mimetype, files)
 end
 
 return {
@@ -70,10 +79,35 @@ return {
 					description = "Send lua project files",
 					uri = "lua",
 					resolve = function()
-						local path = working_dir()
-						local files = lua_files(path)
-						local objects = lua_objects(files)
-						return objects
+						return project_files("lua", "text/x-lua", ".lua")
+					end,
+				},
+				rust = {
+					description = "Send rust project files",
+					uri = "rust",
+					resolve = function()
+						return project_files("rust", "text/x-rust", ".rs")
+					end,
+				},
+				java = {
+					description = "Send java project files",
+					uri = "java",
+					resolve = function()
+						return project_files("java", "text/x-java", ".java")
+					end,
+				},
+				javascript = {
+					description = "Send javascript project files",
+					uri = "js",
+					resolve = function()
+						return project_files("javascript", "text/javascript", ".js")
+					end,
+				},
+				typescript = {
+					description = "Send typescript project files",
+					uri = "ts",
+					resolve = function()
+						return project_files("typescript", "text/typescript", ".ts")
 					end,
 				},
 			},
