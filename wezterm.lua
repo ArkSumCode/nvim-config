@@ -32,7 +32,7 @@ config.keys = {
 	{ key = "z", mods = "LEADER", action = wezterm.action.TogglePaneZoomState },
 	{ key = "d", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
 	{
-		key = "l",
+		key = "x",
 		mods = "LEADER",
 		action = act.Multiple({
 			act.ClearScrollback("ScrollbackAndViewport"),
