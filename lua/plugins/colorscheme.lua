@@ -29,6 +29,10 @@ return {
 		opts = {
 			flavour = "mocha", -- dark theme
 			transparent_background = true,
+			float = {
+				transparent = true,
+				solid = false,
+			},
 		},
 	},
 }
