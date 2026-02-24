@@ -19,7 +19,6 @@ return {
 			"angularls",
 			"eslint",
 			"pyright",
-			"jdtls",
 		},
 	},
 }
