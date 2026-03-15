@@ -2,7 +2,7 @@ local wezterm = require("wezterm")
 local config = {}
 local act = wezterm.action
 
-config.default_cwd = "/home/markus/repos/"
+config.default_cwd = "C:\\Users\\marku\\repos"
 
 -- color schemes
 -- config.color_scheme = "tokyonight_night"
