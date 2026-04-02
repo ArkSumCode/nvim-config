@@ -2,10 +2,11 @@ return {
 	{
 		"LazyVim/LazyVim",
 		opts = {
-			colorscheme = "catppuccin",
+			-- colorscheme = "cyberdream",
 			-- colorscheme = "base16-circus", --light color scheme
 			-- colorscheme = "base16-equilibrium-light", -- dark color scheme
-			-- colorscheme = "tokyonight-night",
+			colorscheme = "tokyonight-night",
+			-- colorscheme = "catppuccin",
 		},
 	},
 	{
@@ -33,6 +34,14 @@ return {
 				transparent = true,
 				solid = false,
 			},
+		},
+	},
+	{
+		"scottmckendry/cyberdream.nvim",
+		lazy = false,
+		priority = 1000,
+		opts = {
+			transparent = true,
 		},
 	},
 }

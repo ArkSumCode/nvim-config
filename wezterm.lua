@@ -5,10 +5,11 @@ local act = wezterm.action
 config.default_cwd = "C:\\Users\\marku\\repos"
 
 -- color schemes
--- config.color_scheme = "tokyonight_night"
+config.color_scheme = "tokyonight_night"
 -- config.color_scheme = "Equilibrium Light (base16)" -- light color scheme
 -- config.color_scheme = "Circus (base16)Circus (base16)" -- dark color scheme
-config.color_scheme = "Catppuccin Mocha" -- dark color scheme
+-- config.color_scheme = "Catppuccin Mocha" -- dark color scheme
+-- config.color_scheme = "Cyberdream"
 
 config.font_size = 14
 config.font =
